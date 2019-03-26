@@ -1,24 +1,7 @@
-# README
+# 有学
+有学，致力于 编程、写作、阅读、工具 等在线培训，帮您快速提高生产力。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 推荐课程
+* 30天快速入门 Python
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 开始学习
