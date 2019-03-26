@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  competition: one
+  image: MyString
+  title: MyString
+  change_log: MyText
+  wechat_code: MyString
+  remark: MyString
+  del: false
+
+two:
+  user: two
+  competition: two
+  image: MyString
+  title: MyString
+  change_log: MyText
+  wechat_code: MyString
+  remark: MyString
+  del: false

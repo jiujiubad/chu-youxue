@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  title: MyString
+  type: 
+  time_limit: MyString
+  time_info: MyString
+  city: MyString
+  location: MyString
+  del: false
+
+two:
+  user: two
+  title: MyString
+  type: 
+  time_limit: MyString
+  time_info: MyString
+  city: MyString
+  location: MyString
+  del: false

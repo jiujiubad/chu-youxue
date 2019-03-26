@@ -9,6 +9,18 @@ class User < ApplicationRecord
             uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  belongs_to :camp
+  belongs_to :course
+  belongs_to :work
+  has_many :work_relationships
+  has_many :works, through: :work_relationships
+  has_many :tasks
+  has_many :course_relationships
+  has_many :courses, through: :course_relationships
+  has_many :meetup_groups
+  has_many :signin_logs
+  has_many :favorites
+  has_many :replays
 
   # Returns the hash digest of the given string.
   def User.digest(string)
