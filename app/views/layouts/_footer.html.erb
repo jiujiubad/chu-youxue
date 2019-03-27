@@ -1,4 +1,19 @@
 <footer class="footer">
+  <p>有学</p>
+  <%= link_to "课程介绍", course_intro_path %>
+  <%= link_to "教学团队", teachers_path %>
+  <%= link_to "学员心得", students_path %>
+  <p>课程资源</p>
+  <%= link_to "学员中心", "#" %>
+  <%= link_to "帮助文档", "#" %>
+  <p>帮助中心</p>
+  <%= link_to "常见问题", faq_path %>
+  <%= link_to "联系方式", contact_path %>
+
+  <%= link_to image_tag("rails.png", alt: "Rails logo"), 'http://rubyonrails.org/' %>
+
+  <p>有学以认知心理学为基石，打破过去传统刻板的学习、培训途径，旨在帮助学员快速、暴力入门任何一个领域。</p>
+
   <small>
     The <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
     by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
