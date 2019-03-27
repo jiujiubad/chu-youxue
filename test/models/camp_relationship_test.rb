@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class WorkRelationshipTest < ActiveSupport::TestCase
+class CampRelationshipTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

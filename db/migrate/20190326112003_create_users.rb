@@ -1,9 +1,6 @@
 class CreateUsers < ActiveRecord::Migration[5.2]
   def change #用户
     create_table :users do |t|
-      t.references :camp, foreign_key: true, index: true
-      t.references :course, foreign_key: true, index: true
-      t.references :work, foreign_key: true, index: true
       t.string    :name,             null: false                  # 名称
       t.string    :email,            null: false                  # 邮件
       t.boolean   :admin,            null: false, default: false  # 是否 admin
@@ -18,8 +15,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string    :avatar                                         # 头像
       t.string    :github_name                                    # github 名称
       t.string    :wechat                                         # 微信账号
-      t.datetime  :pay_at                                         # 付款时间
-      t.datetime  :expired_at                                     # 过期时间
 
       t.timestamps
     end
