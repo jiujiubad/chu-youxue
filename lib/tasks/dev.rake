@@ -92,7 +92,7 @@ namespace :dev do
   task create_competitions: :environment do
     puts "Generate faker competitions."
     Camp.all.each do |camp|
-      rand(6..10).times do
+        4.times do
         camp.competitions.create!(name:        Faker::Book.title,
                                   description: Faker::Lorem.paragraph,
                                   image:       "competition#{rand(1..4)}.jpg")
@@ -102,7 +102,7 @@ namespace :dev do
   task create_works: :environment do
     puts "Generate faker works."
     Competition.all.each do |competition|
-      rand(6..10).times do
+      50.times do
         competition.works.create!(name:        Faker::Movie.quote,
                                   description: Faker::Lorem.paragraph,
                                   image:       "work#{rand(1..30)}.jpg",
@@ -114,7 +114,7 @@ namespace :dev do
   task create_live_broadcasts: :environment do
     puts "Generate faker live_broadcasts."
     Camp.all.each do |camp|
-      rand(6..10).times do
+      20.times do
         camp.live_broadcasts.create!(name:        Faker::Movie.quote,
                                      description: Faker::Lorem.paragraph)
       end
@@ -124,7 +124,7 @@ namespace :dev do
   task create_conversations: :environment do
     puts "Generate faker conversations."
     Camp.all.each do |camp|
-      rand(6..10).times do
+      20.times do
         camp.conversations.create!(name:        Faker::Movie.quote,
                                    description: Faker::Lorem.paragraph)
       end
@@ -134,7 +134,7 @@ namespace :dev do
   task create_meetup_groups: :environment do
     puts "Generate faker meetup_groups."
     Camp.all.each do |camp|
-      rand(6..10).times do
+      20.times do
         camp.meetup_groups.create!(name:        Faker::Movie.quote,
                                    description: Faker::Lorem.paragraph,
                                    meetup_type: ["线上", "线下"].sample,

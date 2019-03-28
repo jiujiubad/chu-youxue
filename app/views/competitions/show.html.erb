@@ -1,0 +1,20 @@
+<%= link_to '我的作品' %>
+<%= link_to '查看往期比赛' %>
+
+<nav>
+  活动首页
+  作品首页
+  最新作品
+  热门投票
+  推荐作品
+  最新评论
+  我支持的作品
+</nav>
+
+<h3>推荐作品</h3>
+
+<h3>作品一览</h3>
+<% @competition.works.each do |w| %>
+  <%= link_to w.name, work_path(w) %>
+  <%= image_tag w.image %>
+<% end %>

@@ -13,4 +13,10 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :conversations, only: [:index, :show]
+  resources :competitions, only: [:index, :show]
+  resources :works, only: [:show]
+  resources :live_broadcasts, only: [:index]
+  resources :meetup_groups, only: [:index, :show, :new]
+  resources :courses, only: [:index, :show]
 end

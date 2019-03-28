@@ -1,0 +1,8 @@
+<h1>全部比赛</h1>
+
+在这里，留下你的脚印
+
+<% @competitions.each do |c| %>
+  <%= link_to c.name, competition_path(c) %>
+  <%= image_tag c.image %>
+<% end %>

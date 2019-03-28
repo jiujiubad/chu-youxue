@@ -1,0 +1,9 @@
+<%= link_to user_path(current_user) do %>
+  <%= image_tag(current_user.avatar) %>
+  <%= current_user.name %>
+<% end %>
+
+<% @courses.each do |c| %>
+  <%= image_tag c.image %>
+  <%= c.name %>
+<% end %>

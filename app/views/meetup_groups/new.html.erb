@@ -1,0 +1,21 @@
+<h1>新建 Meetup</h1>
+
+<%= form_with model: @meetup_group, local: true do |f| %>
+  <%= f.label "活动期限" %>
+  <%= f.text_field  :meetup_time %>
+  <%= f.label "活动类型" %>
+  <%= f.text_field  :meetup_type %>
+
+  <%= f.label "举办时间" %>
+  <%= f.text_field  :time_info %>
+  <%= f.label "城市" %>
+  <%= f.text_field  :city %>
+  <%= f.label "聚会地点" %>
+  <%= f.text_field  :location %>
+  <%= f.label "聚会详情" %>
+  <%= f.text_field  :description %>
+  联系人：
+  <%= current_user.name %>
+  微信号：
+  <%= current_user.wechat %>
+<% end %>

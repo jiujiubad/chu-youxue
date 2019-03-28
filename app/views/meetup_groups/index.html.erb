@@ -1,0 +1,10 @@
+<h1>Meetup</h1>
+
+<%= link_to '返回', root_path %>
+
+<%= link_to '新建 Meetup', new_meetup_group_path %>
+
+<% @meetup_groups.each do |m| %>
+  <li><%= link_to m.name, meetup_group_path(m) %></li>
+  <li><%= m.created_at %></li>
+<% end %>

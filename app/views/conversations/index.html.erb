@@ -1,0 +1,8 @@
+<h2>我的站内信</h2>
+
+<%= link_to '返回', root_path %>
+
+<% @conversations.each do |c| %>
+  <li><%= c.name %></li>
+  <li><%= c.created_at %></li>
+<% end %>
