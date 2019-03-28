@@ -1,4 +1,4 @@
 class Course < ApplicationRecord
   belongs_to :camp
-  has_many :syllabi
+  has_many :syllabuses
 end

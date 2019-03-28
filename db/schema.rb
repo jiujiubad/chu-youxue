@@ -10,38 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_27_102020) do
-
-  create_table "camp_relationships", force: :cascade do |t|
-    t.integer "camp_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["camp_id"], name: "index_camp_relationships_on_camp_id"
-    t.index ["user_id"], name: "index_camp_relationships_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2019_03_26_183637) do
 
   create_table "camps", force: :cascade do |t|
-    t.string "title", null: false
+    t.string "name", null: false
     t.text "description"
-    t.datetime "expired_at"
+    t.datetime "is_hidden", null: false
     t.boolean "del", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.integer "work_id"
-    t.text "description", null: false
-    t.boolean "del", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["work_id"], name: "index_comments_on_work_id"
   end
 
   create_table "competitions", force: :cascade do |t|
     t.integer "camp_id"
-    t.string "title", null: false
+    t.string "name", null: false
     t.text "description"
     t.string "image"
     t.boolean "del", default: false, null: false
@@ -52,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_03_27_102020) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer "camp_id"
-    t.string "title", null: false
+    t.string "name", null: false
     t.text "description"
     t.boolean "del", default: false, null: false
     t.datetime "created_at", null: false
@@ -62,47 +44,32 @@ ActiveRecord::Schema.define(version: 2019_03_27_102020) do
 
   create_table "courses", force: :cascade do |t|
     t.integer "camp_id"
-    t.string "title", null: false
+    t.string "name", null: false
     t.text "description"
     t.string "image"
-    t.boolean "is_locked"
+    t.boolean "is_locked", default: true, null: false
     t.boolean "del", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["camp_id"], name: "index_courses_on_camp_id"
   end
 
-  create_table "favorites", force: :cascade do |t|
-    t.integer "post_id"
-    t.boolean "del", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_favorites_on_post_id"
-  end
-
-  create_table "likes", force: :cascade do |t|
-    t.integer "task_id"
-    t.boolean "del", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["task_id"], name: "index_likes_on_task_id"
-  end
-
-  create_table "lives", force: :cascade do |t|
+  create_table "live_broadcasts", force: :cascade do |t|
     t.integer "camp_id"
     t.string "name", null: false
     t.text "description"
     t.boolean "del", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["camp_id"], name: "index_lives_on_camp_id"
+    t.index ["camp_id"], name: "index_live_broadcasts_on_camp_id"
   end
 
   create_table "meetup_groups", force: :cascade do |t|
     t.integer "camp_id"
-    t.string "title", null: false
-    t.string "type"
-    t.string "time_limit"
+    t.string "name", null: false
+    t.text "description"
+    t.string "meetup_type"
+    t.string "meetup_time"
     t.string "time_info"
     t.string "city"
     t.string "location"
@@ -114,21 +81,12 @@ ActiveRecord::Schema.define(version: 2019_03_27_102020) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "syllabus_id"
-    t.string "title", null: false
+    t.string "name", null: false
     t.text "description"
     t.boolean "del", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["syllabus_id"], name: "index_posts_on_syllabus_id"
-  end
-
-  create_table "replays", force: :cascade do |t|
-    t.integer "conversation_id"
-    t.text "description", null: false
-    t.boolean "del", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["conversation_id"], name: "index_replays_on_conversation_id"
   end
 
   create_table "signin_logs", force: :cascade do |t|
@@ -153,7 +111,7 @@ ActiveRecord::Schema.define(version: 2019_03_27_102020) do
 
   create_table "syllabuses", force: :cascade do |t|
     t.integer "course_id"
-    t.string "title", null: false
+    t.string "name", null: false
     t.text "description"
     t.boolean "del", default: false, null: false
     t.datetime "created_at", null: false
@@ -172,39 +130,43 @@ ActiveRecord::Schema.define(version: 2019_03_27_102020) do
     t.index ["post_id"], name: "index_tasks_on_post_id"
   end
 
+  create_table "user_campships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "camp_id"
+    t.datetime "start_at"
+    t.datetime "expired_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["camp_id"], name: "index_user_campships_on_camp_id"
+    t.index ["user_id"], name: "index_user_campships_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
+    t.string "password_digest", null: false
     t.boolean "admin", default: false, null: false
     t.boolean "del", default: false, null: false
-    t.string "password_digest", null: false
     t.boolean "activated", default: false, null: false
-    t.string "activation_digest"
     t.datetime "activated_at"
+    t.string "activation_digest"
     t.string "remember_digest"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.string "avatar"
     t.string "github_name"
     t.string "wechat"
+    t.integer "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  create_table "votes", force: :cascade do |t|
-    t.integer "work_id"
-    t.boolean "del", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["work_id"], name: "index_votes_on_work_id"
-  end
-
   create_table "works", force: :cascade do |t|
     t.integer "competition_id"
+    t.string "name", null: false
+    t.text "description"
     t.string "image"
-    t.string "title", null: false
-    t.text "change_log"
     t.string "wechat_code"
     t.boolean "del", default: false, null: false
     t.datetime "created_at", null: false

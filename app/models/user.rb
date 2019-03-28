@@ -9,8 +9,8 @@ class User < ApplicationRecord
             uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-  has_many :camp_relationships
-  has_many :camps
+  has_many :user_campships
+  has_many :camps, through: :user_campships
   has_many :signin_logs
 
   # Returns the hash digest of the given string.
