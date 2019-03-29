@@ -1,3 +1,32 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// import bootstrap template from vendor/assets
+//Vendor CSS 第三方插件
+@import "tether/tether.min.css";
+@import "bootstrap/css/bootstrap.min.css";
+@import "fonts/express-icons.css";
+@import "font-awesome/css/font-awesome.min.css";
+@import "bootstrap/css/glyphicon.css";
+@import "ion-icons/css/ionicons.min.css";
+@import "owl-carousel/owl.theme.css";
+@import "owl-carousel/owl.carousel.css";
+@import "magnific-popup/magnific-popup.css";
+@import "lite-tooltip/css/litetooltip.css";
+//Theme CSS 主题
+@import "main.css";
+@import "main-shortcodes.css";
+@import "header.css";
+@import "form-element.css";
+@import "animation.css";
+@import "font-icons.css";
+@import "blog.css";
+@import "streamline-icon.css";
+@import "responsive.css";
+@import "utilities.css";
+@import "skins/default.css";
+//LayerSlider CSS 图层滑块
+@import "masterslider.main.css";
+@import "style.css";
+//Theme Custom CSS 主题自定义
+@import "css/custom.css";
+//Style Swicher 风格切换
+@import "style-switcher/style-switcher.css";
+@import "style-switcher/bootstrap-colorpicker/css/bootstrap-colorpicker.css";

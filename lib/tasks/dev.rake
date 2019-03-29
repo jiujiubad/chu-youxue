@@ -23,7 +23,7 @@ namespace :dev do
                  admin:                 true,
                  activated:             true,
                  activated_at:          Time.zone.now,
-                 avatar:                "avatar1.png",
+                 avatar:                "avatar/a1.png",
                  github_name:           "jiujiubad",
                  wechat:                "jiujiubad")
     80.times do
@@ -35,7 +35,7 @@ namespace :dev do
                    admin:                 false,
                    activated:             true,
                    activated_at:          Faker::Time.between(5.years.ago, Date.today, :all),
-                   avatar:                "avatar#{rand(1..6)}.png",
+                   avatar:                "avatar/a#{rand(1..6)}.png",
                    github_name:           Faker::Internet.username(4..10),
                    wechat:                [Faker::Internet.username(4..10), Faker::PhoneNumber.cell_phone].sample)
     end
@@ -55,7 +55,7 @@ namespace :dev do
       rand(30..40).times do
         camp.courses.create!(name:        Faker::Movie.quote,
                              description: Faker::Lorem.paragraph,
-                             image:       "center#{rand(1..24)}.jpg",
+                             image:       "course/c#{rand(1..24)}.jpg",
                              is_locked:   false)
       end
     end
@@ -95,7 +95,7 @@ namespace :dev do
         4.times do
         camp.competitions.create!(name:        Faker::Book.title,
                                   description: Faker::Lorem.paragraph,
-                                  image:       "competition#{rand(1..4)}.jpg")
+                                  image:       "competition/c#{rand(1..4)}.jpg")
       end
     end
   end
@@ -105,7 +105,7 @@ namespace :dev do
       50.times do
         competition.works.create!(name:        Faker::Movie.quote,
                                   description: Faker::Lorem.paragraph,
-                                  image:       "work#{rand(1..30)}.jpg",
+                                  image:       "work/w#{rand(1..30)}.jpg",
                                   wechat_code: nil)
       end
     end
