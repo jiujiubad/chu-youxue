@@ -12,7 +12,8 @@ module ChuYouxue
     config.load_defaults 5.2
 
     # 引入第三方静态文件
-    config.assets.paths << Rails.root.join('vendor', 'assets', 'vendor')
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'nivo-lightbox')
     config.assets.precompile << Proc.new { |path, fn| fn =~ /vendor\/assets\/images/ }
   end
 end

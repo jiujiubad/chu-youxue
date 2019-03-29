@@ -75,3 +75,5 @@ gem 'will_paginate', '~> 3.1'
 gem 'carrierwave', '~> 1.3'
 # 图像裁剪
 gem 'mini_magick', '~> 4.9'
+# 前端图标icon
+gem 'font-awesome-rails', '~> 4.7'
