@@ -1,8 +1,26 @@
-<h1>全部比赛</h1>
+<section class="bg-white">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h1>全部比赛</h1>
+      <p>在这里，留下你的脚印</p>
+      <div class="row">
 
-在这里，留下你的脚印
+        <% @competitions.each do |c| %>
+          <div class="col-md-6">
+            <div class="row">
+              <%= link_to competition_path(c) do %>
+                <div class="col-md-4">
+                  <%= image_tag c.image, style: "width:200px" %>
+                </div>
+                <div class="col-md-8">
+                  <%= c.name %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
 
-<% @competitions.each do |c| %>
-  <%= link_to c.name, competition_path(c) %>
-  <%= image_tag c.image %>
-<% end %>
+      </div>
+    </div>
+  </div>
+</section>

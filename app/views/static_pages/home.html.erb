@@ -1,3 +1,4 @@
+<% provide(:page_id, "home-page") %>
 <!-- header start -->
 <header id="header" class="header-wrapper home-parallax home-fade">
   <div class="header-overlay"></div>
@@ -28,7 +29,7 @@
       <div class="row">
         <div class="col-md-5">
           <!--<img src="assets/img/intro.jpg" class="img-responsive center-block" alt="intro">-->
-          <%= image_tag("t1.jpg", class:"img-responsive center-block", alt:"intro") %>
+          <%= image_tag("home/left.jpg", class:"img-responsive center-block", alt:"intro") %>
         </div>
 
         <div class="col-md-7">
@@ -174,7 +175,7 @@
               <div class="item-image">
                 <a href="#">
                   <!--<img src="assets/img/portfolio1.jpg" class="img-responsive center-block" alt="portfolio1">-->
-                  <%= image_tag("l2.jpg", class:"img-responsive center-block", alt:"portfolio1") %>
+                  <%= image_tag("home/python.jpg", class:"img-responsive center-block", alt:"portfolio1") %>
                   <div><span><i class="fa fa-plus"></i></span></div>
                 </a>
               </div>
@@ -205,7 +206,7 @@
               <div class="item-image">
                 <a href="#">
                   <!--<img src="assets/img/portfolio2.jpg" class="img-responsive center-block" alt="portfolio2">-->
-                  <%= image_tag("l1.jpg", class:"img-responsive center-block", alt:"portfolio2") %>
+                  <%= image_tag("home/java.jpg", class:"img-responsive center-block", alt:"portfolio2") %>
                   <div><span><i class="fa fa-plus"></i></span></div>
                 </a>
               </div>
@@ -236,7 +237,7 @@
               <div class="item-image">
                 <a href="#">
                   <!--<img src="assets/img/portfolio3.jpg" class="img-responsive center-block" alt="portfolio3">-->
-                  <%= image_tag("l3.jpg", class:"img-responsive center-block", alt:"portfolio3") %>
+                  <%= image_tag("home/javascript.jpg", class:"img-responsive center-block", alt:"portfolio3") %>
                   <div><span><i class="fa fa-plus"></i></span></div>
                 </a>
               </div>
@@ -266,3 +267,47 @@
     </div>
   </section><!--   end of portfolio section  -->
 </div> <!-- end of /.main-content -->
+
+
+<!-- script for portfolio section using hoverdirection -->
+<script type="text/javascript">
+  $(function() {
+
+    $('.portfolio-item > .item-image').each( function() { $(this).hoverdir({
+      hoverDelay : 75
+    }); } );
+
+  });
+</script>
+
+<!-- script for twitter-feed using owl carousel-->
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $("#twit").owlCarousel({
+
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 100,
+      paginationSpeed : 400,
+      navigationText : false,
+      singleItem: true,
+      autoPlay: true,
+      pagination: false
+    });
+
+  });
+</script>
+
+<!-- script for testimonial section using owl carousel -->
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $("#client-speech").owlCarousel({
+
+      autoPlay: 5000, //Set AutoPlay to 3 seconds
+      stopOnHover: true,
+      singleItem:true
+    });
+
+  });
+</script>

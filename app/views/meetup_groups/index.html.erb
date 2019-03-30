@@ -1,10 +1,32 @@
-<h1>Meetup</h1>
 
-<%= link_to '返回', root_path %>
 
-<%= link_to '新建 Meetup', new_meetup_group_path %>
+<div class="row">
+  <div class="col-md-10 col-center">
+    <h1>Meetup</h1>
+    <%= link_to '返回', root_path %>
+    <%= link_to '新建 Meetup', new_meetup_group_path %>
 
-<% @meetup_groups.each do |m| %>
-  <li><%= link_to m.name, meetup_group_path(m) %></li>
-  <li><%= m.created_at %></li>
-<% end %>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>小组名称</th>
+          <th>城市</th>
+          <th>时间</th>
+          <th>联系人</th>
+          <th>查看</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @meetup_groups.each do |m| %>
+          <tr>
+            <td><%= link_to m.name, meetup_group_path(m) %></td>
+            <td><%= link_to m.city %></td>
+            <td><%= link_to m.time_info %></td>
+            <td><%= link_to current_user.name, user_path(current_user) %></td>
+            <td><%= link_to "查看", meetup_group_path(m), class:"btn btn-primary" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

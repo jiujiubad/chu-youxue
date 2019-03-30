@@ -106,6 +106,7 @@ namespace :dev do
         competition.works.create!(name:        Faker::Movie.quote,
                                   description: Faker::Lorem.paragraph,
                                   image:       "work/w#{rand(1..30)}.jpg",
+                                  image_small: "work-small/w#{rand(1..30)}.jpg",
                                   wechat_code: nil)
       end
     end

@@ -1,9 +1,85 @@
-<%= link_to user_path(current_user) do %>
-  <%= image_tag(current_user.avatar) %>
-  <%= current_user.name %>
-<% end %>
+<%#= link_to user_path(current_user) do %>
+  <%#= image_tag(current_user.avatar) %>
+  <%#= current_user.name %>
+<%# end %>
 
-<% @courses.each do |c| %>
-  <%= image_tag c.image %>
-  <%= c.name %>
-<% end %>
+<% provide(:page_id, "portfolio-page") %>
+<!-- header begin -->
+<header class="page-head">
+  <div class="header-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+          <ol class="breadcrumb">
+            <li><a href="index.html">首页</a></li>
+            <li class="active">学习中心</li>
+          </ol> <!-- end of /.breadcrumb -->
+
+        </div>
+      </div>
+    </div> <!-- /.container -->
+  </div> <!-- /.header-wrapper -->
+</header> <!-- /.page-head (header end) -->
+
+<div class="main-content">
+  <!--  begin portfolio section  -->
+  <section class="bg-light-gray">
+    <div class="container">
+
+      <div class="headline text-center">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <h2 class="section-title">全部课程</h2>
+            <p class="section-sub-title">
+              absolutely stunning design &amp; functionality
+            </p> <!-- /.section-sub-title -->
+          </div>
+        </div>
+      </div> <!-- /.headline -->
+
+      <div class="portfolio-item-list">
+        <div class="row">
+
+          <% @courses.each do |c| %>
+            <div class="col-md-4 col-sm-6">
+              <div class="portfolio-item">
+                <div class="item-image">
+                  <a href="#">
+                    <!--<img src="assets/img/portfolio1.jpg" class="img-responsive center-block" alt="portfolio 1">-->
+                    <%= link_to course_path(c) do %>
+                      <%= image_tag(c.image, class:"img-responsive center-block", alt:"portfolio 1") %>
+                    <% end %>
+                    <!--<div><span><i class="fa fa-plus"></i></span></div>-->
+                  </a>
+                </div>
+
+                <div class="item-description" style="height: 200px;">
+                  <div class="row">
+                    <div class="col-xs-12">
+                                                        <span class="item-name">
+                                                            <%= c.name %>
+                                                        </span>
+                      <span>
+                                                            Fashion
+                                                        </span>
+                    </div>
+                  </div>
+                </div> <!-- end of /.item-description -->
+              </div> <!-- end of /.portfolio-item -->
+            </div>
+          <% end %>
+
+        </div>
+      </div> <!-- end of portfolio-item-list -->
+
+      <div id="morePortfolio"></div>
+      <div class="text-center">
+        <a id="loadPortfolio" class="hidden-xs btn btn-white">
+          Load More <span class="caret"></span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</div>

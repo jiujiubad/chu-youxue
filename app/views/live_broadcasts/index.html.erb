@@ -1,10 +1,40 @@
-<h1>下期直播干货准备中，敬请期待！</h1>
+<div class="row">
+  <div class="col-md-12 col-center">
+    <div class="col-md-8">
+      <h2>下期直播干货准备中，敬请期待！</h2>
+      <%= image_tag "https://ws4.sinaimg.cn/large/006tKfTcgy1g1k83urjh8j31ac0pydxu.jpg", style: "width:600px" %>
+    </div>
+    <div class="col-md-4">
+      <ul id="myTab" class="nav nav-tabs">
+        <li class="active"><a href="#home" data-toggle="tab">
+          往期直播</a></li>
+        <li><a href="#ios" data-toggle="tab">预告信息</a></li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="home">
+          <% @live_broadcasts.each do |l| %>
+            <p><%= l.name %></p>
+          <% end %>
+        </div>
+        <div class="tab-pane fade" id="ios">
+          <p>下期直播干货准备中，先复习往期直播吧</p>
+        </div>
+      </div>
 
-往期直播
+    </div>
+  </div>
+</div>
 
-预告信息
-下期直播干货准备中，先复习往期直播吧
 
-<% @live_broadcasts.each do |l| %>
-  <%= l.name %>
-<% end %>
+<script>
+  $(function () {
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+      // 获取已激活的标签页的名称
+      var activeTab = $(e.target).text();
+      // 获取前一个激活的标签页的名称
+      var previousTab = $(e.relatedTarget).text();
+      $(".active-tab span").html(activeTab);
+      $(".previous-tab span").html(previousTab);
+    });
+  });
+</script>

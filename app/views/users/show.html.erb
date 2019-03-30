@@ -1,15 +1,36 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-    <hr/>
-    <h3>我的徽章</h3>
-    <h3>比赛作品</h3>
-    <h3>学习作业</h3>
-  </aside>
-</div>
+
+<session class="user_show">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="row">
+        <div class="col-md-2">
+          <%= gravatar_for @user %>
+        </div>
+        <div class="col-md-10">
+          <%= @user.name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          提交作业数量
+        </div>
+        <div class="col-md-4">
+          作业收到的点赞
+        </div>
+        <div class="col-md-4">
+          作品收到的支持
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <h3>我的徽章</h3>
+          <h3>比赛作品</h3>
+        </div>
+        <div class="col-md-8">
+          <h3>我的作业</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</session>

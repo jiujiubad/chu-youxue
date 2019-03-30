@@ -167,6 +167,7 @@ ActiveRecord::Schema.define(version: 2019_03_26_183637) do
     t.string "name", null: false
     t.text "description"
     t.string "image"
+    t.string "image_small"
     t.string "wechat_code"
     t.boolean "del", default: false, null: false
     t.datetime "created_at", null: false

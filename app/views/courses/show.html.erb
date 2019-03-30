@@ -1,0 +1,12 @@
+
+
+<div class="row col-center">
+  <div class="col-md-6 col-center">
+    <% @course.syllabuses.each do |s| %>
+      <h3><%= s.name %></h3>
+      <% s.posts.each do |p| %>
+        <li><%= link_to p.name, post_path(p) %></li>
+      <% end %>
+    <% end %>
+  </div>
+</div>

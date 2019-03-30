@@ -1,0 +1,17 @@
+<session class="cvsation_show">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h3>我的站内信</h3>
+      <button type="button" class="btn btn-default">回复</button>
+      <div class="row">
+        <div class="col-md-9">
+          Admin
+        </div>
+        <div class="col-md-3">
+          <%= @conversation.created_at %>
+        </div>
+      </div>
+      <%= @conversation.description %>
+    </div>
+  </div>
+</session>

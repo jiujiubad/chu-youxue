@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   resources :live_broadcasts, only: [:index]
   resources :meetup_groups, only: [:index, :show, :new]
   resources :courses, only: [:index, :show]
+  resources :posts, only: [:show]
 end

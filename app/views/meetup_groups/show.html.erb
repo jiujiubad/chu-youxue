@@ -1,10 +1,16 @@
-<h1><%= @meetup_group.name %></h1>
-<%= link_to '返回', meetup_groups_path %>
-活动期限:<%= @meetup_group.meetup_time %>
-活动类型:<%= @meetup_group.meetup_type %>
-举办时间:<%= @meetup_group.time_info %>
-城市:<%= @meetup_group.city %>
-聚会地点:<%= @meetup_group.location %>
-聚会详情:<%= @meetup_group.description %>
-联系人:<%= current_user.name %>
-微信号:<%= current_user.wechat %>
+<div class="row">
+  <div class="col-md-8 col-center">
+    <ul>
+      <h2><%= @meetup_group.name %></h2>
+      <%= link_to '返回', meetup_groups_path %>
+      <li>活动期限: <%= @meetup_group.meetup_time %></li>
+      <li>活动类型: <%= @meetup_group.meetup_type %></li>
+      <li>举办时间: <%= @meetup_group.time_info %></li>
+      <li>城市: <%= @meetup_group.city %></li>
+      <li>聚会地点: <%= @meetup_group.location %></li>
+      <li>聚会详情: <%= @meetup_group.description %></li>
+      <li>联系人: <%= current_user.name %></li>
+      <li>微信号: <%= current_user.wechat %></li>
+    </ul>
+  </div>
+</div>
