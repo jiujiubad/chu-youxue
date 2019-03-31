@@ -1,7 +1,6 @@
 class MeetupGroupsController < ApplicationController
   def index
-    @camp = Camp.last
-    @meetup_groups = @camp.meetup_groups
+    @meetup_groups = current_camp.meetup_groups
   end
 
   def show

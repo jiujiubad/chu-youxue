@@ -1,7 +1,6 @@
 class CompetitionsController < ApplicationController
   def index
-    @camp = Camp.last
-    @competitions = @camp.competitions
+    @competitions = current_camp.competitions
   end
 
   def show

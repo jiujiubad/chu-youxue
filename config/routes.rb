@@ -9,15 +9,20 @@ Rails.application.routes.draw do
   get    '/login',        to: 'sessions#new'
   post   '/login',        to: 'sessions#create'
   delete '/logout',       to: 'sessions#destroy'
-  get    '/dashboard',    to: 'camps#show'
+
+  # admin
+  # account
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :conversations, only: [:index, :show]
-  resources :competitions, only: [:index, :show]
+  # camp
   resources :works, only: [:show]
-  resources :live_broadcasts, only: [:index]
-  resources :meetup_groups, only: [:index, :show, :new]
-  resources :courses, only: [:index, :show]
   resources :posts, only: [:show]
+  resources :camps, only: [:show] do
+    resources :courses, only: [:index, :show]
+    resources :meetup_groups, only: [:index, :show, :new]
+    resources :live_broadcasts, only: [:index]
+    resources :competitions, only: [:index, :show]
+    resources :conversations, only: [:index, :show]
+  end
 end

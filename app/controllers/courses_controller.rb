@@ -1,7 +1,6 @@
 class CoursesController < ApplicationController
   def index
-    @camp = Camp.last
-    @courses = @camp.courses
+    @courses = current_camp.courses
   end
 
   def show
