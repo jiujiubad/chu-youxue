@@ -18,8 +18,11 @@
 //= require turbolinks
 //= require_tree .
 
-//** import bootstrap template from vendor/assets **//
-//= require jquery-2.1.3.min.js
-//= require bootstrap.min.js
-//= require owl.carousel.js
-//= require jquery.hoverdir.js
+/*===== 首页导览列变化特效 =====*/
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 450) {  //当画面高度至450px时触发效果
+    $('#navbar').addClass('scroll_navbar')  //navbar 增加 scroll_navbar CSS
+  } else {
+    $('#navbar').removeClass('scroll_navbar') //navbar 移除 scroll_navbar CSS
+  }
+})

@@ -1,129 +1,110 @@
-<!--<footer class="footer">-->
-<!--  <p>有学</p>-->
-<%#= link_to "课程介绍", course_intro_path %>
-<%#= link_to "教学团队", teachers_path %>
-<%#= link_to "学员心得", students_path %>
-<!--  <p>课程资源</p>-->
-<%#= link_to "学员中心", "#" %>
-<%#= link_to "帮助文档", "#" %>
-<!--  <p>帮助中心</p>-->
-<%#= link_to "常见问题", faq_path %>
-<%#= link_to "联系方式", contact_path %>
-
-<!--  <p>有学以认知心理学为基石，打破过去传统刻板的学习、培训途径，旨在帮助学员快速、暴力入门任何一个领域。</p>-->
-
-<!--  <small>-->
-<!--    The <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>-->
-<!--    by <a href="http://www.michaelhartl.com/">Michael Hartl</a>-->
-<!--  </small>-->
-<!--  <nav>-->
-<!--    <ul>-->
-<!--      <li><a href="http://news.railstutorial.org/">News</a></li>-->
-<!--    </ul>-->
-<!--  </nav>-->
-<!--</footer>-->
-
-<footer>
+<footer class="footer">
   <div class="container">
     <div class="row">
-
-      <!-- useful links -->
-      <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
-        <h4>有学</h4>
-        <ul class="row footer-links">
-          <div class="col-md-6 col-sm-6 col-xs-6">
-            <li><a href="/">课程介绍</a></li>
-            <li><a href="/teachers">教学团队</a></li>
-            <li><a href="/students">学员心得</a></li>
-            <li><a href="https://xiaochu.cf">友情链接</a></li>
-            © 2019 有学
-          </div>
-
-          <div class="col-md-6 col-sm-6 col-xs-6">
-            <li><a href="/courses">学习中心</a></li>
-            <li><a href="#">帮助文档</a></li>
-          </div>
-        </ul>
-      </div>
-
-      <!-- recent news -->
-      <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
-        <h4>动态</h4>
-
-        <div class="row footer-news">
-          <div class="col-md-4 col-sm-4 col-xs-6">
-            <!--<img src="assets/img/intro.jpg" class="img-responsive center-block" alt="recent news 1">-->
-            <%= image_tag("course/c5.jpg", class: "img-responsive center-block", alt: "recent news 1") %>
-          </div>
-          <div class="col-md-8 col-sm-4 col-xs-6">
-            <div class="row">
-              <p class="text-capitalize">
-                <a href="#">
-                  Python 入门课，火热开放报名
-                </a>
-              </p>
-              <p class="news-date">2019-03-12</p>
-            </div>
-          </div>
-        </div> <!-- /.footer-news -->
-
-        <div class="row footer-news">
-          <div class="col-md-4 col-sm-4 col-xs-6">
-            <!--<img src="assets/img/intro.jpg" class="img-responsive center-block" alt="recent news 2">-->
-            <%= image_tag("course/c4.jpg", class: "img-responsive center-block", alt: "recent news 2") %>
-          </div>
-          <div class="col-md-8 col-sm-4 col-xs-6">
-            <div class="row">
-              <p class="text-capitalize">
-                <a href="#">
-                  Python 入门课，线下班第一期圆满结束
-                </a>
-              </p>
-              <p class="news-date">2019-02-20</p>
-            </div>
-          </div>
-        </div> <!-- /.footer-news -->
-      </div> <!-- /.footer-widget -->
-
-      <!-- news-letter -->
-      <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
-        <h4>加入</h4>
-
-        <p>注册以获取最新的优惠及免费课程</p>
-        <div class="input-group margin-bottom-sm">
-          <input class="form-control" type="text" placeholder="Email address">
-          <span class="input-group-addon">
-            <%= link_to signup_path do %>
-              <i class="fa fa-paper-plane fa-fw"></i>
-            <% end %>
-          </span>
-        </div>
-      </div> <!-- /.footer-widget -->
-
-      <!-- about avada agency -->
-      <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
-        <h4>帮助</h4>
-
-        <ul class="footer-links">
-          <li><a href="/faq">常见问题</a></li>
-          <li><a href="/contact">联系方式</a></li>
-        </ul>
-
+      <div class="col-md-12">
         <div class="row">
-          <div class="col-md-12">
-            <ul class="footer-share-button">
-              <li><a href="/"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="/"><i class="fa fa-google-plus"></i></a></li>
-              <li><a href="/"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="/"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="/"><i class="fa fa-youtube"></i></a></li>
-              <li><a href="/"><i class="fa fa-pinterest"></i></a></li>
-              <li><a href="/"><i class="fa fa-instagram"></i></a></li>
-            </ul> <!-- /.footer-share-button -->
-          </div>
-        </div>
-      </div> <!-- /.footer-widget -->
 
+          <!-- useful links -->
+          <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
+            <h4>简介</h4>
+            <ul class="row list-unstyled footer-links">
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <li><a href="/">课程介绍</a></li>
+                <li><a href="/teachers">教学团队</a></li>
+                <li><a href="/students">学员心得</a></li>
+                <li><a href="https://xiaochu.cf">友情链接</a></li>
+                © 2019 <i class="fa fa-ils"></i> 有学
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <li><a href="/courses">学习中心</a></li>
+                <li><a href="#">帮助文档</a></li>
+              </div>
+            </ul>
+          </div>
+
+          <!-- recent news -->
+          <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
+            <h4>动态</h4>
+
+            <div class="row footer-news">
+              <div class="col-md-4 col-sm-4 col-xs-6">
+                <!--<img src="assets/img/intro.jpg" class="img-responsive center-block" alt="recent news 1">-->
+                <%= image_tag("course/c5.jpg", class: "img-responsive center-block", alt: "recent news 1") %>
+              </div>
+              <div class="col-md-8 col-sm-4 col-xs-6">
+                <div class="row">
+                  <p class="text-capitalize">
+                    <a href="#">
+                      Python 入门课，火热开放报名
+                    </a>
+                  </p>
+                  <p class="news-date">2019-03-12</p>
+                </div>
+              </div>
+            </div> <!-- /.footer-news -->
+
+            <div class="row footer-news">
+              <div class="col-md-4 col-sm-4 col-xs-6">
+                <!--<img src="assets/img/intro.jpg" class="img-responsive center-block" alt="recent news 2">-->
+                <%= image_tag("course/c4.jpg", class: "img-responsive center-block", alt: "recent news 2") %>
+              </div>
+              <div class="col-md-8 col-sm-4 col-xs-6">
+                <div class="row">
+                  <p class="text-capitalize">
+                    <a href="#">
+                      Python 入门课，线下班第一期圆满结束
+                    </a>
+                  </p>
+                  <p class="news-date">2019-02-20</p>
+                </div>
+              </div>
+            </div> <!-- /.footer-news -->
+          </div> <!-- /.footer-widget -->
+
+          <!-- news-letter -->
+          <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
+            <h4>加入</h4>
+
+            <p>注册以获取最新的优惠及免费课程</p>
+            <div class="input-group footer-join">
+              <input type="text" class="form-control" placeholder="输入邮箱">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <%= link_to signup_path do %>
+                    <span><i class="fa fa-paper-plane fa-fw"></i></span>
+                  <% end %>
+                </button>
+              </div>
+            </div>
+          </div> <!-- /.footer-widget -->
+
+          <!-- about avada agency -->
+          <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
+            <h4>帮助</h4>
+
+            <ul class="list-unstyled footer-links">
+              <li><a href="/faq">常见问题</a></li>
+              <li><a href="/contact">联系方式</a></li>
+            </ul>
+
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="list-unstyled footer-share-button">
+                  <li><a href="/"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="/"><i class="fa fa-google-plus"></i></a></li>
+                  <li><a href="/"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="/"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href="/"><i class="fa fa-youtube"></i></a></li>
+                  <li><a href="/"><i class="fa fa-pinterest"></i></a></li>
+                  <li><a href="/"><i class="fa fa-instagram"></i></a></li>
+                </ul> <!-- /.footer-share-button -->
+              </div>
+            </div>
+          </div> <!-- /.footer-widget -->
+
+        </div>
+      </div>
     </div>
   </div>
 </footer>
