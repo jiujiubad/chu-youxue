@@ -259,12 +259,12 @@ footer{
 }
 .btn-push {
   font-size: 1.4em;
-  border: 1px solid #000;
-  background-color: #fff; //rgba(0, 0, 0, 0.5); 半透明背景
-  color: #666;
+  //border: 1px solid #000;
+  background-color: #31dae2; //rgba(0, 0, 0, 0.5); 半透明背景 #31dae2 #32d6ef
+  color: #fff;
   &:hover {
-    background-color: #999;
-    border: 1px solid #999;
+    background-color: #72f1ff;
+    border: 1px solid #72f1ff;
   }
 }
 
@@ -290,51 +290,56 @@ footer{
 }
 
 /*-------------------------  2.2 Intro 大图轮播 ------------------------------*/
-.intro-box {
-  /*===== 轮播内容 =====*/
-  .item {
-    /* 标题 */
-    h1 {
-      margin-top: -52%; //标题高度
-      letter-spacing: 5px; //文字间距
-      color: $gray-body;
-      text-shadow: none;
-    }
-    p {
-      margin: 25px 0;
-      font-size: 20px;
-      color: $gray-body;
-      text-shadow: none;
-    }
-    img {
-      width: 100%;
-    }
-  }
-
-  /*===== 换页按钮 =====*/
-  .carousel-control {
-    span {
-      margin-top: 145%; //按钮高度
-      font-size: 50px; //按钮大小
+#header {
+  background: url(home/intro1.jpg) no-repeat center center; /*原图：slider1.jpg*/
+  background-attachment: fixed; //图片位置固定
+  background-size: cover; //图片全屏（另一种 contain）
+  display: table;
+  height: calc(100vh - 10px); //图片总高度
+  width: 100%;
+  .header-wrapper-inner {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    .welcome-speech {
+      margin-top: 7em;
+      h1 {
+        color: #666;
+        font-size: 40px;
+        font-weight: 600;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+      }
+      p {
+        color: #666;
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        margin: 20px 0 40px 0;
+      }
     }
   }
 }
 
-/*-------------------------  2.3 品牌故事 ------------------------------*/
-.story-box {
-  padding: 5.6285em 0; //区块间隔
-  .center-block {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
+/*-------------------------  2.3 品牌介绍 ------------------------------*/
+.intro {
+  padding: 5.6em 0; //区块间隔
+  img:hover{
+    opacity: 0.6;
   }
   .intro-description {
+    @media (max-width: 991px) and (min-width: 700px) { //控制小屏幕时，左右间距
+      padding-left: 60px;
+    }
     padding-left: 40px;
     h2 {
       font-size: 30px;
-      margin-top: 0px;
+      margin-top: -10px;
       text-transform: uppercase;
       color: #555;
+      @media (max-width: 991px) { //控制小屏幕时，上下间距
+        margin-top: 1.414em;
+      }
     }
     p {
       font-size: 14px;
@@ -359,7 +364,6 @@ footer{
 /*-------------------------  2.4 服务优势 ------------------------------*/
 .service-box {
   /* 区块 */
-  background-color: #f8f8f8;
   text-align: center;
   padding: 25px 62.5px 50px 62.5px; //区块间隔
 
@@ -420,9 +424,8 @@ footer{
 /*-------------------------  2.6 推荐商品 ------------------------------*/
 .show-box {
   /* 区块 */
-  background-color: #f8f8f8;
   text-align: center;
-  padding: 50px 0 50px 0;
+  padding: 50px 0;
 
   /* 图片 */
   img {
@@ -433,17 +436,15 @@ footer{
   .box {
     margin-top: 15px;
     box-shadow: 2px 2px 5px #888;
-  }
-
-  /* 图片区块-鼠标滑动效果 */
-  .box:hover {
-    opacity: 0.6;
+    &:hover {
+      opacity: 0.6;
+    }
   }
 
   /* 文字区块 */
   .content {
     margin-top: 15px;
-    color: #000;
+    color: #666;
   }
 }
 
@@ -502,23 +503,21 @@ footer{
   }
 }
 
-/*-------------------------  2.8 合作伙伴 ------------------------------*/
+/*-------------------------  2.8 合作品牌 ------------------------------*/
 .brand-box {
   /* 区块 */
-  background-color: #f8f8f8;
   text-align: center;
-  padding: 50px 0 50px 0;
+  padding: 50px 0;
 
   /* 图片 */
   img {
-    margin: 10px 15px 10px 15px;
+    margin: 10px 15px;
     width: 150px;
   }
 }
 
 /*-------------------------  2.9 立即购买 ------------------------------*/
 .push-box {
-  /* 区块 */
   text-align: center;
   padding: 75px 0 0 0;
   height: 200px;
