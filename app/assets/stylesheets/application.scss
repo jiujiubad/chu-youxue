@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -52,40 +51,54 @@ body {
   font-size: 14px; //文字大小
   position: relative; //设定为相对位置
   color: #666;
+
   a {
     text-decoration: none !important; //文字连结移除底线
   }
+
   /*===== 背景颜色 ======*/
   .bg-white {
     background-color: #ffffff;
   }
+
   .bg-light-gray {
     background-color: #f9f9f9;
   }
+
   /*===== 宽度 ======*/
   .width-25 {
     width: 25%;
   }
+
   .width-50 {
     width: 50%;
   }
+
   .width-75 {
     width: 75%;
   }
+
   .width-100 {
     width: 100%;
+  }
+
+  /*===== bootstrap 栅格系统居中 =====*/
+  .col-center {
+    margin: 0 auto;
+    float: none;
   }
 }
 
 /* =-=--=-=-=-=-=-==-=-=-=-  1.1 Navbar 导航   -=-=-=-==-=-==-====-==-=-= */
 .navbar-default {
-  background: rgba(0,0,0,0.5); //半透明背景
+  background: rgba(0, 0, 0, 0.5); //半透明背景
   border: none;
 
   /* 链接 */
   a {
     color: #fff !important;
   }
+
   a:hover,
   a:active,
   a:focus {
@@ -100,6 +113,7 @@ body {
     a {
       color: #000 !important;
     }
+
     a:hover,
     a:active,
     a:focus {
@@ -114,7 +128,7 @@ body {
   }
 
   /*===== Dropdown ======*/
-  .dropdown-menu{
+  .dropdown-menu {
     background-color: #fff;
     min-width: 175px;
 
@@ -123,6 +137,7 @@ body {
       color: #000 !important;
       padding: 8px 17px;
     }
+
     a:hover {
       background-color: #f0f0f0;
       color: #0070DE !important;
@@ -144,9 +159,11 @@ body {
   /* 搜索框 */
   .search-box {
     margin-top: 7.5px;
+
     input {
       height: 35px;
     }
+
     button {
       padding: 5px 10px 5px 10px;
       height: 35px;
@@ -155,26 +172,30 @@ body {
 }
 
 /* =-=--=-=-=-=-=-==-=-=-=-  1.2 Footer 页脚   -=-=-=-==-=-==-====-==-=-= */
-footer{
+footer {
   /* 通用 */
   //text-align: center;
   min-height: 175px; //最小高度
-  background-color:$gray-footer;
+  background-color: $gray-footer;
   padding: 100px 0;
   font-size: 12px;
   color: #fff;
+
   h4 {
     margin-top: 0px;
     margin-bottom: 30px;
     color: #fff;
   }
+
   li {
     margin-bottom: 10px;
   }
+
   a {
-    text-decoration:none;
+    text-decoration: none;
     color: #ddd;
   }
+
   a:hover,
   a:active,
   a:focus {
@@ -185,11 +206,13 @@ footer{
   .footer-news {
     margin-bottom: 35px;
     padding-right: 45px;
+
     p {
       margin-bottom: 5px;
       margin-top: -4px;
       line-height: 1.45em;
     }
+
     .news-date {
       margin-top: -2px;
       color: #969595;
@@ -201,13 +224,16 @@ footer{
   .input-group {
     margin-right: 40px;
   }
+
   .footer-join {
     margin-top: 10px;
+
     input {
       margin-right: 40px;
       font-size: 12px;
       height: 30px;
     }
+
     button {
       padding: 5px 8px 5px 8px;
       height: 30px;
@@ -218,6 +244,7 @@ footer{
   .footer-share-button {
     li {
       display: inline;
+
       i {
         background-color: #4a4a4a;
         color: #6b6b6b;
@@ -228,6 +255,7 @@ footer{
         width: 30px;
         border-radius: 8px;
       }
+
       i:hover {
         background-color: #fff;
         color: #000;
@@ -247,21 +275,26 @@ footer{
   -ms-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+
   &:hover {
     color: #fff;
   }
 }
+
 .btn-black {
   background-color: #666;
+
   &:hover {
     background-color: #999;
   }
 }
+
 .btn-push {
   font-size: 1.4em;
   //border: 1px solid #000;
   background-color: #31dae2; //rgba(0, 0, 0, 0.5); 半透明背景 #31dae2 #32d6ef
   color: #fff;
+
   &:hover {
     background-color: #72f1ff;
     border: 1px solid #72f1ff;
@@ -297,12 +330,15 @@ footer{
   display: table;
   height: calc(100vh - 10px); //图片总高度
   width: 100%;
+
   .header-wrapper-inner {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
+
     .welcome-speech {
       margin-top: 7em;
+
       h1 {
         color: #666;
         font-size: 40px;
@@ -310,6 +346,7 @@ footer{
         letter-spacing: 6px;
         text-transform: uppercase;
       }
+
       p {
         color: #666;
         font-size: 22px;
@@ -324,14 +361,16 @@ footer{
 /*-------------------------  2.3 品牌介绍 ------------------------------*/
 .intro {
   padding: 5.6em 0; //区块间隔
-  img:hover{
+  img:hover {
     opacity: 0.6;
   }
+
   .intro-description {
     @media (max-width: 991px) and (min-width: 700px) { //控制小屏幕时，左右间距
       padding-left: 60px;
     }
     padding-left: 40px;
+
     h2 {
       font-size: 30px;
       margin-top: -10px;
@@ -341,20 +380,25 @@ footer{
         margin-top: 1.414em;
       }
     }
+
     p {
       font-size: 14px;
       padding: 2px 60px 5px 0px;
       color: #969595;
     }
+
     .points {
       padding: 0px;
+
       li {
         margin-bottom: 10px;
+
         span {
           margin-right: 10px;
         }
       }
     }
+
     .btn {
       margin-top: 20px;
     }
@@ -436,6 +480,7 @@ footer{
   .box {
     margin-top: 15px;
     box-shadow: 2px 2px 5px #888;
+
     &:hover {
       opacity: 0.6;
     }
@@ -522,4 +567,341 @@ footer{
   padding: 75px 0 0 0;
   height: 200px;
   background: image_url("header/h4.jpg") no-repeat scroll top center/ cover; //背景图片
+}
+
+/*================================================================
+							3. Courses Page
+==================================================================*/
+
+/* =-=--=-=-=-=-=-==-=-=-=-  3.1 Courses Header   -=-=-=-==-=-==-====-==-=-= */
+.course-header {
+  text-align: center;
+  padding: 90px 0 20px 0;
+  background: image_url("header/h8.jpg") no-repeat scroll top center/ cover; //背景图片
+  .user-avatar {
+    z-index: 98;
+
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+    }
+  }
+
+  .vip-state {
+    z-index: 99;
+    margin-left: 79px;
+    margin-top: -32px;
+
+    img {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    margin-top: 10px;
+
+    a {
+      color: #fff;
+    }
+  }
+}
+
+.course-box {
+  padding: 30px 20px;
+
+  .course-content {
+    /* 盒子效果 */
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25); //盒子边缘浮起效果
+    display: table;                                //撑开盒子
+    .course-tab {
+      float: left;
+      margin-bottom: 30px;
+      width: 100%;
+      height: auto;
+      display: block;
+      padding: 0;
+      position: relative;
+      background-color: #f5f5f5;
+
+      .nav-tabs li.active a {
+        cursor: default;
+        background-color: #31dae2;
+        color: #fff;
+      }
+
+      .nav-tabs li a {
+        line-height: 1.43;
+        border: 0;
+        border-radius: 0;
+        color: #333;
+        font-size: 1.14em;
+        letter-spacing: 0.1em;
+        padding: 14px 25px;
+        margin: 0;
+      }
+    }
+
+    .all-course {
+      /*位置*/
+      margin: 0 auto;
+      overflow: auto;
+      /*形状*/
+      min-width: 200px;
+      max-width: 960px;
+      /*第一步：设置一行图片的总大小*/
+      @media(min-width: 1221px){width: 840px}
+      @media(max-width: 1220px){width: 780px}
+      @media(max-width: 1160px){width: 720px}
+      @media(max-width: 1090px){width: 720px}
+      @media(max-width: 980px){width: 690px}
+      @media(max-width: 950px){width: 560px}
+      @media(max-width: 770px){width: 560px}
+      @media(max-width: 600px){width: 520px}
+      @media(max-width: 560px){width: 320px}
+      @media(max-width: 520px){width: 280px}
+      .course-card-unlock {
+        /*位置*/
+        position: relative; /*最外层相对位置*/
+        /*第二步：通过 margin 使图片居中*/
+        @media(min-width: 1221px){margin: 15px 30px 40px;}
+        @media(max-width: 1220px){margin: 15px 20px 40px;}
+        @media(max-width: 1160px){margin: 15px 10px 40px;}
+        @media(max-width: 1090px){margin: 15px 10px 40px;}
+        @media(max-width: 980px){margin: 15px 5px 40px;}
+        @media(max-width: 950px){margin: 15px 30px 40px;}
+        @media(max-width: 770px){margin: 15px 30px 40px;}
+        @media(max-width: 600px){margin: 15px 20px 40px;}
+        @media(max-width: 560px){margin: 15px 50px 40px;}
+        @media(max-width: 520px){margin: 15px 30px 40px;}
+        /*形状*/
+        height: 235px;
+        width: 220px;
+        float: left;
+        background: #F4F4F4;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.24);
+
+        .course-img img, .title, .title-cover, .block, a .start {
+          width: 100%;
+        }
+        .course-img {
+          /*位置*/
+          position: absolute;
+          z-index: 1;
+          img {
+            /*形状*/
+            height: 160px;
+          }
+        }
+
+        .title {
+          /*位置*/
+          position: absolute;
+          z-index: 3;
+          h3 {
+            margin-top: 125px;
+            font-size: 15px;
+            color: #333;
+            line-height: 40px;
+            padding-left: 10px;
+            letter-spacing: 1px;
+            /*截断文字，用...结尾*/
+            width: 210px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow:ellipsis;  /*兼容IE*/
+          }
+        }
+
+        .title-cover {
+          /*位置*/
+          position: absolute;
+          z-index: 2;
+          margin-top: 125px;
+          /*形状*/
+          height: 35px;
+          /*样式*/
+          background-color: rgba(225, 225, 225, 0.8);
+        }
+
+        .block {
+          /*位置*/
+          position: absolute;
+          z-index: 2;
+          margin-top: 160px;
+          /*形状*/
+          height: 70px;
+          /*样式*/
+          padding: 6px 10px;
+          border-top: 1px solid #DEDEDE; /*分割线*/
+          background-color: #f1f1f1;
+          .time {
+            font-size: 13px;
+          }
+          .bar {
+            /*样式*/
+            overflow: hidden;
+            background-color: #ccc;
+            height: 4px;
+            width: auto;
+            margin: 13px 0 5px;
+            border-radius: 4px;
+            .percent {
+              width: 40%;
+              height: 4px;
+              background-color: #1ECD97;
+            }
+          }
+
+          .task {
+            font-size: 13px;
+          }
+        }
+
+        a {
+          .start {
+            /*位置*/
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            /*形状*/
+            height: 235px;
+            /*样式*/
+            opacity: 0; /*隐藏元素（鼠标悬停前）*/
+            background: rgba(101, 101, 101, 0.6);
+            color: #fff;
+            text-align: center;
+            padding-top: 80px;
+          }
+
+          &:hover {
+            .start {
+              opacity: 1; /*显示元素（鼠标悬停前）*/
+            }
+          }
+        }
+      }
+      .card-lock {
+        /*位置*/
+        position: relative; /*最外层相对位置*/
+        /*形状（配合 boostrap 栅格，通过设置 margin 的值来控制图片宽度）*/
+        @media(min-width: 1201px){margin: 0 15px 300px;}
+        @media(max-width: 1200px){margin: 0 0 300px;}
+        @media(max-width: 991px){margin: 0 40px 300px;}  /*平板屏幕宽度：768px（用767px是因为bootstrap栅格布局变化）*/
+        @media(max-width: 900px){margin: 0 20px 300px;}
+        @media(max-width: 767px){margin: 0 220px 300px;} /*平板屏幕宽度：768px（用767px是因为bootstrap栅格布局变化）*/
+        @media(max-width: 700px){margin: 0 180px 300px;}
+        @media(max-width: 650px){margin: 0 160px 300px;}
+        @media(max-width: 600px){margin: 0 140px 300px;}
+        @media(max-width: 550px){margin: 0 120px 300px;}
+        @media(max-width: 500px){margin: 0 100px 300px;}
+        @media(max-width: 450px){margin: 0 80px 300px;}  /*手机屏幕宽度：320-450px*/
+        /*样式*/
+        background: #F4F4F4;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.24);
+
+        /* 形状（共用）*/
+        .course-img img, .title, .title-cover, .block, a .start {
+          width: 100%;
+        }
+        .course-img {
+          /*位置*/
+          position: absolute;
+          z-index: 1;
+          img {
+            /*形状*/
+            height: 160px;
+          }
+        }
+
+        .title {
+          /*位置*/
+          position: absolute;
+          z-index: 3;
+          h3 {
+            margin-top: 125px;
+            font-size: 15px;
+            color: #333;
+            line-height: 40px;
+            padding-left: 10px;
+            letter-spacing: 1px;
+            /*截断文字，用...结尾*/
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow:ellipsis;  /*兼容IE*/
+          }
+        }
+
+        .title-cover {
+          /*位置*/
+          position: absolute;
+          z-index: 2;
+          margin-top: 125px;
+          /*形状*/
+          height: 35px;
+          /*样式*/
+          background-color: rgba(225, 225, 225, 0.8);
+        }
+
+        .block {
+          /*位置*/
+          position: absolute;
+          z-index: 2;
+          margin-top: 160px;
+          /*形状*/
+          height: 70px;
+          /*样式*/
+          padding: 6px 10px;
+          border-top: 1px solid #DEDEDE; /*分割线*/
+          background-color: #f1f1f1;
+          .time {
+            font-size: 13px;
+          }
+          .bar {
+            /*样式*/
+            overflow: hidden;
+            background-color: #ccc;
+            height: 4px;
+            width: auto;
+            margin: 13px 0 5px;
+            border-radius: 4px;
+            .percent {
+              width: 40%;
+              height: 4px;
+              background-color: #1ECD97;
+            }
+          }
+          .task {
+            font-size: 13px;
+          }
+        }
+
+        a {
+          .start {
+            /*位置*/
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            /*形状*/
+            height: 235px;
+            /*样式*/
+            opacity: 0; /*隐藏元素（鼠标悬停前）*/
+            background: rgba(101, 101, 101, 0.6);
+            color: #fff;
+            text-align: center;
+            padding-top: 80px;
+          }
+          &:hover {
+            .start {
+              opacity: 1; /*显示元素（鼠标悬停前）*/
+            }
+          }
+        }
+      }
+    }
+  }
 }

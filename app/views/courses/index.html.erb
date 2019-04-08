@@ -1,80 +1,122 @@
 <% provide(:page_id, "portfolio-page") %>
-<!-- header begin -->
-<header class="page-head">
-  <div class="header-wrapper">
-    <div class="container">
+
+<section class="course-header">
+  <div class="user-avatar">
+    <%= image_tag current_user.avatar %>
+  </div>
+  <div class="vip-state">
+    <%= image_tag "jimi/vip-member.png" %>
+  </div>
+  <p><%= link_to current_user.name %></p>
+</section>
+
+<section class="course-box">
+  <div class="row">
+    <div class="col-md-3 col-sm-3 col-xs-12">
       <div class="row">
+
         <div class="col-md-12">
-
-          <ol class="breadcrumb">
-            <li><a href="index.html">首页</a></li>
-            <li class="active">学习中心</li>
-          </ol> <!-- end of /.breadcrumb -->
-
-        </div>
-      </div>
-    </div> <!-- /.container -->
-  </div> <!-- /.header-wrapper -->
-</header> <!-- /.page-head (header end) -->
-
-<div class="main-content">
-  <!--  begin portfolio section  -->
-  <section class="bg-light-gray">
-    <div class="container">
-
-      <div class="headline text-center">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3">
-            <h2 class="section-title">全部课程</h2>
-            <p class="section-sub-title">
-              absolutely stunning design &amp; functionality
-            </p> <!-- /.section-sub-title -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              最新通知
+            </div>
+            <div class="panel-body">
+              同学们可以点击这里自行创建线上或者线下 Meetup，和更多小伙伴一起学习，共同成长。
+            </div>
           </div>
         </div>
-      </div> <!-- /.headline -->
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              同学说
+            </div>
+            <div class="panel-body">
+              <p>【大赛复盘】商店魔改大赛复盘</p>
+              <p>【大赛复盘】魔改大赛第二期：我们为什么要学习编程？</p>
+              <p>【大赛复盘】大赛让我看到了颠覆的力量</p>
+            </div>
+          </div>
+        </div>
 
-      <div class="portfolio-item-list">
-        <div class="row">
+      </div>
+    </div>
+    <div class="col-md-9 col-sm-9 col-xs-12">
+      <div class="course-content">
+        <div class="course-tab">
+          <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+              <a href="#home" data-toggle="tab">
+                菜鸟教程
+              </a>
+            </li>
+            <li><a href="#ios" data-toggle="tab">iOS</a></li>
+          </ul>
+        </div>
 
-          <% @courses.each do |c| %>
-            <div class="col-md-4 col-sm-6">
-              <div class="portfolio-item">
-                <div class="item-image">
-                  <a href="#">
-                    <!--<img src="assets/img/portfolio1.jpg" class="img-responsive center-block" alt="portfolio 1">-->
-                    <%= link_to camp_course_path(current_camp, c) do %>
-                      <%= image_tag(c.image, class:"img-responsive center-block", alt:"portfolio 1") %>
-                    <% end %>
-                    <!--<div><span><i class="fa fa-plus"></i></span></div>-->
+        <div class="all-course">
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="home">
+              <% @courses.each do |c| %>
+                <div class="course-card-unlock">
+                  <div class="course-img">
+                    <%= image_tag(c.image) %>
+                  </div>
+                  <div class="title">
+                    <h3><%= c.name %></h3>
+                  </div>
+                  <div class="title-cover"></div>
+                  <div class="block">
+                    <p class="time">预计学习时间： 7小时</p>
+                    <div class="bar">
+                      <div class="percent"></div>
+                    </div>
+                    <p class="task">共1个作业，已完成0个</p>
+                  </div>
+                  <a href="/camps/<%= current_camp.id %>/courses/<%= c.id %>">
+                    <div class="start">
+                      <button type="button" class="btn btn-success">进入课程</button>
+                    </div>
                   </a>
                 </div>
-
-                <div class="item-description" style="height: 200px;">
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <span class="item-name">
-                          <%= c.name %>
-                      </span>
-                      <span>
-                        Fashion
-                      </span>
-                    </div>
-                  </div>
-                </div> <!-- end of /.item-description -->
-              </div> <!-- end of /.portfolio-item -->
+              <% end %>
             </div>
-          <% end %>
+            <div class="tab-pane fade" id="ios">
+              <div class="row">
+                <div class="col-md-11 col-center">
 
+                  <% @courses.each do |c| %>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                      <div class="card-lock">
+                        <div class="course-img">
+                          <%= image_tag(c.image, class: "img-responsive") %>
+                        </div>
+                        <div class="title">
+                          <h3><%= c.name %></h3>
+                        </div>
+                        <div class="title-cover"></div>
+                        <div class="block">
+                          <p class="time">预计学习时间： 7小时</p>
+                          <div class="bar">
+                            <div class="percent"></div>
+                          </div>
+                          <p class="task">共1个作业，已完成0个</p>
+                        </div>
+                        <a href="/camps/<%= current_camp.id %>/courses/<%= c.id %>">
+                          <div class="start">
+                            <button type="button" class="btn btn-success">进入课程</button>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  <% end %>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-      </div> <!-- end of portfolio-item-list -->
-
-      <div id="morePortfolio"></div>
-      <div class="text-center">
-        <a id="loadPortfolio" class="hidden-xs btn btn-white">
-          Load More <span class="caret"></span>
-        </a>
       </div>
-
     </div>
-  </section>
-</div>
+  </div>
+</section>
