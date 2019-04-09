@@ -16,6 +16,7 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
 @import "font-awesome";
 
 /*
@@ -42,10 +43,13 @@
 /*================================================================
 							1. Global
 ==================================================================*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
 $gray-body: #666;
 $gray-footer: #333;
+$blue: #31dae2;
 
-body {
+html, body {
+  font-family: 'Open Sans', sans-serif;
   overflow-x: hidden; //裁切页面内容，超出视窗不显示
   letter-spacing: 1px; //文字间距
   font-size: 14px; //文字大小
@@ -58,10 +62,10 @@ body {
 
   /*===== 背景颜色 ======*/
   .bg-white {
-    background-color: #ffffff;
+    background-color: #fff;
   }
 
-  .bg-light-gray {
+  .bg-gray-light {
     background-color: #f9f9f9;
   }
 
@@ -167,6 +171,44 @@ body {
     button {
       padding: 5px 10px 5px 10px;
       height: 35px;
+    }
+  }
+
+  /*修改 bootstrap3 导航栏折叠断点，即 768px-992px 时导航栏元素溢出导致自动换行*/
+  @media (max-width: 991px) {
+    .navbar-header {
+      float: none;
+    }
+    .navbar-left, .navbar-right {
+      float: none !important;
+    }
+    .navbar-toggle {
+      display: block;
+    }
+    .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+      display: none !important;
+    }
+    .navbar-nav {
+      float: none !important;
+      margin-top: 7.5px;
+    }
+    .navbar-nav > li {
+      float: none;
+    }
+    .navbar-nav > li > a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .collapse.in {
+      display: block !important;
     }
   }
 }
@@ -283,7 +325,6 @@ footer {
 
 .btn-black {
   background-color: #666;
-
   &:hover {
     background-color: #999;
   }
@@ -294,12 +335,19 @@ footer {
   //border: 1px solid #000;
   background-color: #31dae2; //rgba(0, 0, 0, 0.5); 半透明背景 #31dae2 #32d6ef
   color: #fff;
-
   &:hover {
     background-color: #72f1ff;
     border: 1px solid #72f1ff;
   }
 }
+
+.btn-blue {
+  background-color: #31dae2;
+  &:hover {
+    background-color: #1ab5bc;
+  }
+}
+
 
 /*================================================================
 							2. Home page
@@ -610,13 +658,14 @@ footer {
   }
 }
 
+/* =-=--=-=-=-=-=-==-=-=-=-  3.2 Courses Content   -=-=-=-==-=-==-====-==-=-= */
 .course-box {
   padding: 30px 20px;
 
   .course-content {
     /* 盒子效果 */
     box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25); //盒子边缘浮起效果
-    display: table;                                //撑开盒子
+    display: table; //撑开盒子
     .course-tab {
       float: left;
       margin-bottom: 30px;
@@ -653,44 +702,87 @@ footer {
       min-width: 200px;
       max-width: 960px;
       /*第一步：设置一行图片的总大小*/
-      @media(min-width: 1221px){width: 840px}
-      @media(max-width: 1220px){width: 780px}
-      @media(max-width: 1160px){width: 720px}
-      @media(max-width: 1090px){width: 720px}
-      @media(max-width: 980px){width: 690px}
-      @media(max-width: 950px){width: 560px}
-      @media(max-width: 770px){width: 560px}
-      @media(max-width: 600px){width: 520px}
-      @media(max-width: 560px){width: 320px}
-      @media(max-width: 520px){width: 280px}
+      @media(min-width: 1221px) {
+        width: 840px
+      }
+      @media(max-width: 1220px) {
+        width: 780px
+      }
+      @media(max-width: 1160px) {
+        width: 720px
+      }
+      @media(max-width: 1090px) {
+        width: 720px
+      }
+      @media(max-width: 980px) {
+        width: 690px
+      }
+      @media(max-width: 950px) {
+        width: 560px
+      }
+      @media(max-width: 770px) {
+        width: 560px
+      }
+      @media(max-width: 600px) {
+        width: 520px
+      }
+      @media(max-width: 560px) {
+        width: 320px
+      }
+      @media(max-width: 520px) {
+        width: 280px
+      }
+
       .course-card-unlock {
         /*位置*/
         position: relative; /*最外层相对位置*/
         /*第二步：通过 margin 使图片居中*/
-        @media(min-width: 1221px){margin: 15px 30px 40px;}
-        @media(max-width: 1220px){margin: 15px 20px 40px;}
-        @media(max-width: 1160px){margin: 15px 10px 40px;}
-        @media(max-width: 1090px){margin: 15px 10px 40px;}
-        @media(max-width: 980px){margin: 15px 5px 40px;}
-        @media(max-width: 950px){margin: 15px 30px 40px;}
-        @media(max-width: 770px){margin: 15px 30px 40px;}
-        @media(max-width: 600px){margin: 15px 20px 40px;}
-        @media(max-width: 560px){margin: 15px 50px 40px;}
-        @media(max-width: 520px){margin: 15px 30px 40px;}
+        @media(min-width: 1221px) {
+          margin: 15px 30px 40px;
+        }
+        @media(max-width: 1220px) {
+          margin: 15px 20px 40px;
+        }
+        @media(max-width: 1160px) {
+          margin: 15px 10px 40px;
+        }
+        @media(max-width: 1090px) {
+          margin: 15px 10px 40px;
+        }
+        @media(max-width: 980px) {
+          margin: 15px 5px 40px;
+        }
+        @media(max-width: 950px) {
+          margin: 15px 30px 40px;
+        }
+        @media(max-width: 770px) {
+          margin: 15px 30px 40px;
+        }
+        @media(max-width: 600px) {
+          margin: 15px 20px 40px;
+        }
+        @media(max-width: 560px) {
+          margin: 15px 50px 40px;
+        }
+        @media(max-width: 520px) {
+          margin: 15px 30px 40px;
+        }
         /*形状*/
         height: 235px;
         width: 220px;
         float: left;
         background: #F4F4F4;
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.24);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.24);
 
         .course-img img, .title, .title-cover, .block, a .start {
           width: 100%;
         }
+
         .course-img {
           /*位置*/
           position: absolute;
           z-index: 1;
+
           img {
             /*形状*/
             height: 160px;
@@ -701,6 +793,7 @@ footer {
           /*位置*/
           position: absolute;
           z-index: 3;
+
           h3 {
             margin-top: 125px;
             font-size: 15px;
@@ -712,7 +805,7 @@ footer {
             width: 210px;
             white-space: nowrap;
             overflow: hidden;
-            text-overflow:ellipsis;  /*兼容IE*/
+            text-overflow: ellipsis; /*兼容IE*/
           }
         }
 
@@ -738,9 +831,11 @@ footer {
           padding: 6px 10px;
           border-top: 1px solid #DEDEDE; /*分割线*/
           background-color: #f1f1f1;
+
           .time {
             font-size: 13px;
           }
+
           .bar {
             /*样式*/
             overflow: hidden;
@@ -749,10 +844,11 @@ footer {
             width: auto;
             margin: 13px 0 5px;
             border-radius: 4px;
+
             .percent {
               width: 40%;
               height: 4px;
-              background-color: #1ECD97;
+              background-color: #31dae2;
             }
           }
 
@@ -784,33 +880,61 @@ footer {
           }
         }
       }
+
       .card-lock {
         /*位置*/
         position: relative; /*最外层相对位置*/
         /*形状（配合 boostrap 栅格，通过设置 margin 的值来控制图片宽度）*/
-        @media(min-width: 1201px){margin: 0 15px 300px;}
-        @media(max-width: 1200px){margin: 0 0 300px;}
-        @media(max-width: 991px){margin: 0 40px 300px;}  /*平板屏幕宽度：768px（用767px是因为bootstrap栅格布局变化）*/
-        @media(max-width: 900px){margin: 0 20px 300px;}
-        @media(max-width: 767px){margin: 0 220px 300px;} /*平板屏幕宽度：768px（用767px是因为bootstrap栅格布局变化）*/
-        @media(max-width: 700px){margin: 0 180px 300px;}
-        @media(max-width: 650px){margin: 0 160px 300px;}
-        @media(max-width: 600px){margin: 0 140px 300px;}
-        @media(max-width: 550px){margin: 0 120px 300px;}
-        @media(max-width: 500px){margin: 0 100px 300px;}
-        @media(max-width: 450px){margin: 0 80px 300px;}  /*手机屏幕宽度：320-450px*/
+        @media(min-width: 1201px) {
+          margin: 0 15px 300px;
+        }
+        @media(max-width: 1200px) {
+          margin: 0 0 300px;
+        }
+        @media(max-width: 991px) {
+          margin: 0 40px 300px;
+        }
+        /*平板屏幕宽度：768px（用767px是因为bootstrap栅格布局变化）*/
+        @media(max-width: 900px) {
+          margin: 0 20px 300px;
+        }
+        @media(max-width: 767px) {
+          margin: 0 220px 300px;
+        }
+        /*平板屏幕宽度：768px（用767px是因为bootstrap栅格布局变化）*/
+        @media(max-width: 700px) {
+          margin: 0 180px 300px;
+        }
+        @media(max-width: 650px) {
+          margin: 0 160px 300px;
+        }
+        @media(max-width: 600px) {
+          margin: 0 140px 300px;
+        }
+        @media(max-width: 550px) {
+          margin: 0 120px 300px;
+        }
+        @media(max-width: 500px) {
+          margin: 0 100px 300px;
+        }
+        @media(max-width: 450px) {
+          margin: 0 80px 300px;
+        }
+        /*手机屏幕宽度：320-450px*/
         /*样式*/
         background: #F4F4F4;
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.24);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.24);
 
         /* 形状（共用）*/
         .course-img img, .title, .title-cover, .block, a .start {
           width: 100%;
         }
+
         .course-img {
           /*位置*/
           position: absolute;
           z-index: 1;
+
           img {
             /*形状*/
             height: 160px;
@@ -821,6 +945,7 @@ footer {
           /*位置*/
           position: absolute;
           z-index: 3;
+
           h3 {
             margin-top: 125px;
             font-size: 15px;
@@ -832,7 +957,7 @@ footer {
             width: 200px;
             white-space: nowrap;
             overflow: hidden;
-            text-overflow:ellipsis;  /*兼容IE*/
+            text-overflow: ellipsis; /*兼容IE*/
           }
         }
 
@@ -858,9 +983,11 @@ footer {
           padding: 6px 10px;
           border-top: 1px solid #DEDEDE; /*分割线*/
           background-color: #f1f1f1;
+
           .time {
             font-size: 13px;
           }
+
           .bar {
             /*样式*/
             overflow: hidden;
@@ -869,12 +996,14 @@ footer {
             width: auto;
             margin: 13px 0 5px;
             border-radius: 4px;
+
             .percent {
               width: 40%;
               height: 4px;
-              background-color: #1ECD97;
+              background-color: #31dae2;
             }
           }
+
           .task {
             font-size: 13px;
           }
@@ -895,6 +1024,7 @@ footer {
             text-align: center;
             padding-top: 80px;
           }
+
           &:hover {
             .start {
               opacity: 1; /*显示元素（鼠标悬停前）*/
@@ -905,3 +1035,136 @@ footer {
     }
   }
 }
+
+/*================================================================
+							4. Courses-Show Page
+==================================================================*/
+
+/* =-=--=-=-=-=-=-==-=-=-=-  4.1 Courses-Show Header   -=-=-=-==-=-==-====-==-=-= */
+#course-show-page {
+  background-color: #f9f9f9;
+  .course-show-3 {
+    margin-top: 49px;
+    .bg-white {
+      border-bottom: 1px solid #dedede;
+    }
+    /*===导航栏===*/
+    .nav {
+      height: 55px;
+      width: 90%;   //宽度调小
+      margin: auto; //居中
+      padding-top: 20px;
+      .left-box {
+        float: left;
+        padding-left: 15px;
+        @media(max-width: 7680px){
+          display: none; //完全隐藏元素
+        }
+        h4 {
+          font-weight: normal;
+          font-size: 20px;
+          margin-bottom: 20px;
+          margin-top: 0px;
+        }
+      }
+      .search {
+        float: left;
+        padding-left: 30px;
+        @media(max-width: 768px){
+          display: none; //完全隐藏元素
+        }
+        input {
+          letter-spacing: 1px;
+          border-bottom: 1px solid #dedede;
+          border-top: 0;
+          border-left: 0;
+          border-right: 0;
+          &:focus {
+            outline: none; //去除Bootstrap输入框聚焦时的边框轮廓线
+          }
+        }
+      }
+      .right-box {
+        float: right;
+        @media(max-width: 768px){
+          float: none; //清除浮动
+        }
+        i {
+          margin: auto 10px auto 5px;
+        }
+      }
+    }
+    /*===正文：目录盒子===*/
+    .content {
+      box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25); //盒子边缘浮起效果
+      display: table;                                //撑开盒子
+      width: 90%;                                    //撑开宽度
+      margin: 20px auto;                             //居中
+      background-color: rgba(255,255,255,0.94);
+      padding: 20px 40px;
+      /*===头部===*/
+      .header {
+        height: 45px;
+        border-bottom: 1px solid #dedede;
+        h4 {
+          float: left;
+        }
+        p {
+          float: left;
+          margin-top: 10px;
+          margin-left: 20px;
+          font-weight: 500;
+        }
+        .bar {
+          float: right;
+          margin-top: 10px;
+          text-align: center;
+          @media(max-width: 750px){
+            float: left;
+          }
+          .progress {
+            width: 300px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 5px;
+            .percent {
+              width: 60%;
+              background-color: #31dae2;
+            }
+          }
+        }
+      }
+      /*===内容===*/
+      .syllabus {
+        h3 {
+          font-size: 18px;
+          line-height: 40px;
+          color: #333;
+        }
+        .far {
+        }
+        th, td {
+          border-bottom: 1px solid #f1f1f1;
+        }
+        .post {
+          margin-top: 12px;
+          i {
+            color: #31dae2;
+          }
+          a {
+            margin-left: 10px;
+            color: #666;
+            letter-spacing: 2px;
+            &:hover {
+              color: #31dae2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/* =-=--=-=-=-=-=-==-=-=-=-  4.2 Courses-Show Content   -=-=-=-==-=-==-====-==-=-= */

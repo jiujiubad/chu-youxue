@@ -76,4 +76,4 @@ gem 'carrierwave', '~> 1.3'
 # 图像裁剪
 gem 'mini_magick', '~> 4.9'
 # 前端图标icon
-gem 'font-awesome-rails', '~> 4.7'
+gem 'font-awesome-sass', '~> 5.8' #版本太低很多icon无法使用 gem 'font-awesome-rails', '~> 4.7'
