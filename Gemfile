@@ -62,11 +62,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-# 密码哈希
-gem 'bcrypt', '~> 3.1'
-# 假资料
-gem 'faker', '~> 1.9'
-# 前端框架
+
+#===== 前端 =====#
+# bootstrap 前端框架
 gem 'bootstrap-sass', '~> 3.4'
 gem 'jquery-rails', '~> 4.3'
 # 分页
@@ -75,5 +73,16 @@ gem 'will_paginate', '~> 3.1'
 gem 'carrierwave', '~> 1.3'
 # 图像裁剪
 gem 'mini_magick', '~> 4.9'
-# 前端图标icon
-gem 'font-awesome-sass', '~> 5.8' #版本太低很多icon无法使用 gem 'font-awesome-rails', '~> 4.7'
+# 图标 icon
+##让旧版本图标生效，在 application.thml.erb 添加 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+gem 'font-awesome-sass', '~> 5.8'
+# Markdown
+##教程：http://railscasts.com/episodes/207-syntax-highlighting-revised?view=asciicast
+gem 'redcarpet', '~> 3.4' # Markdown to Html 解析器
+gem 'coderay', '~> 1.1' # Markdown 高亮
+
+#===== 后端 =====#
+# 密码哈希
+gem 'bcrypt', '~> 3.1'
+# 假资料
+gem 'faker', '~> 1.9'
