@@ -312,24 +312,17 @@ footer {
   padding: 0.57em 1.9em;
   color: #fff;
   /* 显示特效 */
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-
+  transition: 0.3s;
   &:hover {
     color: #fff;
   }
 }
-
 .btn-black {
   background-color: #666;
   &:hover {
     background-color: #999;
   }
 }
-
 .btn-push {
   font-size: 1.4em;
   //border: 1px solid #000;
@@ -340,11 +333,19 @@ footer {
     border: 1px solid #72f1ff;
   }
 }
-
 .btn-blue {
   background-color: #31dae2;
   &:hover {
     background-color: #1ab5bc;
+  }
+}
+.btn-white {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #666;
+  &:hover {
+    background-color: #eee;
+    color: #666;
   }
 }
 
@@ -1040,68 +1041,76 @@ footer {
 							4. Courses-Show Page
 ==================================================================*/
 
-/* =-=--=-=-=-=-=-==-=-=-=-  4.1 Courses-Show Header   -=-=-=-==-=-==-====-==-=-= */
+/* =-=--=-=-=-=-=-==-=-=-=-  4.1 Courses Common Navbar   -=-=-=-==-=-==-====-==-=-= */
+.course-nav {
+  margin-top: 49px;
+  .bg-white {
+    border-bottom: 1px solid #dedede;
+  }
+  /*===导航栏===*/
+  .nav {
+    height: 55px;
+    width: 90%;   //宽度调小
+    margin: auto; //居中
+    padding-top: 20px;
+    .left-box {
+      float: left;
+      padding-left: 15px;
+      @media(max-width: 768px){
+        display: none; //完全隐藏元素
+      }
+      h4 {
+        font-weight: normal;
+        font-size: 20px;
+        margin-bottom: 20px;
+        margin-top: 0px;
+      }
+    }
+    .search {
+      float: left;
+      padding-left: 30px;
+      @media(max-width: 768px){
+        display: none; //完全隐藏元素
+      }
+      input {
+        letter-spacing: 1px;
+        border-bottom: 1px solid #dedede;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        &:focus {
+          outline: none; //去除Bootstrap输入框聚焦时的边框轮廓线
+        }
+      }
+    }
+    .right-box {
+      float: right;
+      @media(max-width: 768px){
+        float: none; //清除浮动
+      }
+      i {
+        margin: auto 10px auto 5px;
+      }
+    }
+  }
+}
+
+/* =-=--=-=-=-=-=-==-=-=-=-  4.2 Courses-Show Page  -=-=-=-==-=-==-====-==-=-= */
 #course-show-page {
   background-color: #f9f9f9;
-  .course-show-3 {
-    margin-top: 49px;
-    .bg-white {
-      border-bottom: 1px solid #dedede;
-    }
-    /*===导航栏===*/
-    .nav {
-      height: 55px;
-      width: 90%;   //宽度调小
-      margin: auto; //居中
-      padding-top: 20px;
-      .left-box {
-        float: left;
-        padding-left: 15px;
-        @media(max-width: 7680px){
-          display: none; //完全隐藏元素
-        }
-        h4 {
-          font-weight: normal;
-          font-size: 20px;
-          margin-bottom: 20px;
-          margin-top: 0px;
-        }
-      }
-      .search {
-        float: left;
-        padding-left: 30px;
-        @media(max-width: 768px){
-          display: none; //完全隐藏元素
-        }
-        input {
-          letter-spacing: 1px;
-          border-bottom: 1px solid #dedede;
-          border-top: 0;
-          border-left: 0;
-          border-right: 0;
-          &:focus {
-            outline: none; //去除Bootstrap输入框聚焦时的边框轮廓线
-          }
-        }
-      }
-      .right-box {
-        float: right;
-        @media(max-width: 768px){
-          float: none; //清除浮动
-        }
-        i {
-          margin: auto 10px auto 5px;
-        }
-      }
-    }
-    /*===正文：目录盒子===*/
+  .course-show {
     .content {
       box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25); //盒子边缘浮起效果
       display: table;                                //撑开盒子
-      width: 90%;                                    //撑开宽度
+      @media(min-width: 600px){
+        width: 90%;                                  //撑开宽度
+      }
       margin: 20px auto;                             //居中
       background-color: rgba(255,255,255,0.94);
       padding: 20px 40px;
+      @media(max-width: 599px){
+        padding: 20px 20px;
+      }
       /*===头部===*/
       .header {
         height: 45px;
@@ -1119,7 +1128,7 @@ footer {
           float: right;
           margin-top: 10px;
           text-align: center;
-          @media(max-width: 750px){
+          @media(max-width: 800px){
             float: left;
           }
           .progress {
@@ -1140,8 +1149,6 @@ footer {
           font-size: 18px;
           line-height: 40px;
           color: #333;
-        }
-        .far {
         }
         th, td {
           border-bottom: 1px solid #f1f1f1;
@@ -1165,6 +1172,156 @@ footer {
   }
 }
 
+/*================================================================
+							5. Post-Show Page
+==================================================================*/
 
+/* =-=--=-=-=-=-=-==-=-=-=-  4.1 Post-Show Page  -=-=-=-==-=-==-====-==-=-= */
+#post-show-page {
+  background-color: #f9f9f9;
+  .course-show {
+    .content {
+      box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25); //盒子边缘浮起效果
+      display: table;                                //撑开盒子
+      @media(min-width: 600px){
+        width: 90%;                                  //撑开宽度
+      }
+      margin: 20px auto;                             //居中
+      background-color: rgba(255,255,255,0.94);
+      padding: 20px 40px;
+      @media(max-width: 599px){
+        padding: 20px 20px;
+      }
+      /*===头部===*/
+      .header {
+        height: 110px;
+        border-bottom: 1px solid #dedede;
+        .des-text {
+          float: left;
+          h4 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: 500;
+            color: #333;
+          }
+        }
+        .view-count {
+          float: right;
+          @media(max-width: 650px){
+            display: none;
+          }
+          margin-top: 75px;
+          color: #9B9B9B;
+        }
+      }
+      /*===内容===*/
+      .post {
+        border-bottom: 1px solid #dedede;
+        padding-bottom: 50px;
+        .markdown {
+          font-size: 16px;
+          line-height: 1.6;
+          h1 {
+            padding-bottom: .3em;
+            font-size: 2.1em;
+            margin-top: 1.275em;
+            margin-bottom: 0.85em;
+            line-height: 1.2;
+          }
+          h2 {
+            padding-bottom: .3em;
+            font-size: 1.7em;
+            margin-top: 1.275em;
+            margin-bottom: 0.85em;
+            line-height: 1.3;
+          }
+          h3 {
+            font-size: 1.3em;
+            margin-top: 1.275em;
+            margin-bottom: 0.85em;
+            line-height: 1.43;
+          }
+          p {
+            font-size: 16px;
+            line-height: 1.5em;
+            margin-bottom: 16px;
+          }
+        }
+        .title {
+          margin: 50px auto 35px; //因为h1用了display: inline，无法改变margin，所以在这个位置改
+          h1 {
+            display: inline;      //让h1和icon图标并排（所以margin、padding属性会因此失效）
+          }
+          i {
+            @media(min-width: 700px){
+              float: right;
+              margin-top: 8px;
+            }
+            font-size: 25px;
+            color: #31dae2;
+          }
+        }
+      }
+      .feel {
+        padding: 10px 5px 70px;
+        border-bottom: 2px solid #dedede; //下划线
+        .select {
+          display: -webkit-flex;
+          -webkit-justify-content: space-between;
+          padding: 30px 5px;
+          .item1, .item2, .item3 {
+            .emoji {
+              font-size: 2em;
+              vertical-align: middle;
+            }
+            .word {
+              font-size: 16px;
+              vertical-align: middle;
+              @media(max-width: 549px){
+                display: none;
+              }
+            }
+          }
+          .bor1, .bor2, .bor3 {
+            text-align: center;
+            width: 120px;
+            @media(max-width: 549px){
+              width: 80px;
+            }
+            &:hover {
+              border: 2px solid #31dae2; //线改为2px会有向下动的动作效果
+            }
+          }
+        }
+      }
 
-/* =-=--=-=-=-=-=-==-=-=-=-  4.2 Courses-Show Content   -=-=-=-==-=-==-====-==-=-= */
+      .paginate-box {
+        padding: 20px 0 20px;
+        .line {
+          display: -webkit-flex;
+          -webkit-justify-content: space-between;
+          .item1 {
+            .btn-white {
+              padding: 5px 14px;
+            }
+          }
+          .item2 {
+            .tip {
+              color: rgba(136,136,136,0.77);;
+              margin-top: 2px;
+              @media(max-width: 549px){
+                display: none;
+              }
+            }
+          }
+          .item3 {
+            .btn-blue {
+              padding: 5px 14px;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

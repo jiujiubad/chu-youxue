@@ -1,36 +1,12 @@
 <% provide(:page_id, "course-show-page") %>
 
-<section class="course-show-3">
-  <div class="row bg-white">
-    <div class="col-md-10 col-md-offset-1">
+<%= render 'shared/course_nav' %>
 
-      <div class="nav">
-        <div class="left-box">
-          <h4>百宝箱1</h4>
-        </div>
-        <div class="search">
-          <div class="input-group">
-            <span><i class="fa fa-search"></i></span>
-            <input type="text" placeholder="搜索本课程教材">
-          </div>
-        </div>
-        <div class="right-box">
-          <ul class="list-inline">
-            <li><i class="fas fa-tv"></i>概览</li>
-            <li><i class="fas fa-bars"></i>教材</li>
-            <li><i class="far fa-file-word"></i>作业</li>
-            <li><i class="far fa-comments"></i>FAQ</li>
-            <li><i class="fab fa-twitch"></i>动态</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
+<section class="course-show">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="content">
+
         <div class="header">
           <h4>当前进度</h4>
           <p>总共2个作业，已完成2个。</p>
@@ -40,6 +16,7 @@
             </div>
           </div>
         </div>
+
         <div class="syllabus">
           <table class="table">
             <% @course.syllabuses.each do |s| %>
@@ -68,6 +45,7 @@
             <% end %>
           </table>
         </div>
+
       </div>
     </div>
   </div>
